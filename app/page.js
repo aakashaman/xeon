@@ -10,7 +10,7 @@ import { Dialog, Transition } from '@headlessui/react';
 import { Fragment, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Box from '@mui/material/Box';
-import { DataGrid } from '@mui/x-data-grid';
+import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 export default function Home() {
   const dispatch = useDispatch();
   const { user } = useSelector((state) => state.auth);
@@ -216,29 +216,34 @@ export default function Home() {
               </button>
             </div>
             <div className="w-[90vw] mx-auto">
-              <DataGrid
-                rows={contacts || []}
-                columns={columns}
-                initialState={{
-                  pagination: {
-                    paginationModel: {
-                      pageSize: 5,
+              <Box
+               
+              >
+                <DataGrid
+                  components={{ Toolbar: GridToolbar }}
+                  rows={contacts || []}
+                  columns={columns}
+                  initialState={{
+                    pagination: {
+                      paginationModel: {
+                        pageSize: 5,
+                      },
                     },
-                  },
-                }}
-                pageSizeOptions={[5]}
-                checkboxSelection
-                disableRowSelectionOnClick
-              />
+                  }}
+                  pageSizeOptions={[5]}
+                  checkboxSelection
+                  disableRowSelectionOnClick
+                />
+              </Box>
             </div>
           </div>
         ) : (
           <div className="w-[90vw] mx-auto text-center">
-            <section className="bg-gray-100 text-white py-2 mt-4 w-full sm:h-[85vh] h-screen  ">
+            <section className="bg-gray-100 text-white py-2 mt-4 w-full sm:h-[85vh] min:h-screen  ">
               <div className="container mx-auto flex flex-wrap items-center">
                 <div className="w-full md:w-1/2 mt-16">
                   <h1 className="text-5xl font-bold mb-4 text-gray-500">
-                    Welcome to Xeon 
+                    Welcome to Xeon
                   </h1>
                   <p className="text-xl mb-transperent phonebook8 text-gray-400">
                     All your contacts in one place
@@ -247,13 +252,13 @@ export default function Home() {
                     Get Started
                   </button>
                 </div>
-                <div className="w-full md:w-1/2">
+                <div className="w-full md:w-1/2 flex items-center justify-center">
                   <img
                     style={{
-                      marginTop: '100px',
-                      marginLeft: '100px',
-                      width: '400px',
-                      height: '400px',
+                      marginTop: "100px",
+
+                      width: "400px",
+                      height: "400px",
                     }}
                     alt="Unicorn"
                     src="phonebook.png"
@@ -413,7 +418,7 @@ export default function Home() {
                           </div>
                         </div>
                       ) : (
-                        ''
+                        ""
                       )}
                     </form>
                   </div>
@@ -591,7 +596,7 @@ export default function Home() {
                               </div>
                             </div>
                           ) : (
-                            ''
+                            ""
                           )}
                         </div>
                       </form>
