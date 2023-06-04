@@ -216,9 +216,7 @@ export default function Home() {
               </button>
             </div>
             <div className="w-[90vw] mx-auto">
-              <Box
-               
-              >
+              <Box>
                 <DataGrid
                   components={{ Toolbar: GridToolbar }}
                   rows={contacts || []}
@@ -248,8 +246,11 @@ export default function Home() {
                   <p className="text-xl mb-transperent phonebook8 text-gray-400">
                     All your contacts in one place
                   </p>
-                  <button className="bg-slate-500 hover:bg-slate-600 text-white font-bold py-2 px-4 rounded mt-4">
-                    Get Started
+                  <button
+                  
+                    className="bg-slate-500 hover:bg-slate-600 text-white font-bold py-2 px-4 rounded mt-4"
+                  >
+                    Click Join Now to Get started 
                   </button>
                 </div>
                 <div className="w-full md:w-1/2 flex items-center justify-center">
